@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete UMKM</title>
+</head>
+<body>
+    <h1>Delete UMKM</h1>
+    <p>Are you sure you want to delete this UMKM?</p>
+    <form action="/delete" method="post">
+        <input type="hidden" id="id" name="id" value="{{.UmkmID}}">
+        <input type="submit" value="Delete">
+    </form>
+    <a href="/">Back to list</a>
+</body>
+</html>

@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"goravel/tests"
+	"spendid/tests"
 )
 
 type ExampleTestSuite struct {

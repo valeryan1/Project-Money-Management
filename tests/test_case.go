@@ -3,7 +3,7 @@ package tests
 import (
 	"github.com/goravel/framework/testing"
 
-	"goravel/bootstrap"
+	"spendid/bootstrap"
 )
 
 func init() {

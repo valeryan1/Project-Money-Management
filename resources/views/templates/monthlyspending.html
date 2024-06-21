@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendID Dashboard</title>
+    <link rel="stylesheet" href="css/monthlyfinance.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #d5f3e5;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            /* max-width: 1200px; */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        header h1 {
+            color: #c8fa65;
+            margin: 0 3rem 0 0;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav a {
+            color: #ffff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .icons {
+            display: flex;
+        }
+
+        .icon {
+            margin-left: 10px;
+            background-color: #373737;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .breadcrumb{
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .breadcrumb h1{
+            color: #4D4E45;
+        }
+
+        main {
+            display: flex;
+            gap: 20px;
+        }
+
+        .left-section, .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 80vh; /* Set the height of sections */
+        }
+
+        section {
+            background-color: #373737;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .balance {
+            display: flex;
+            justify-content: flex-end;
+            border-radius: 10px;
+        }
+
+        .balance .amount, .expenses-container .amount, .income .amount {
+            font-size: 2em;
+            font-weight: bold;
+            color: #c8fa65;
+        }
+
+        .amount{
+            font-size: 60px;
+            margin: 10px 0;
+        }
+
+        .amount-balance{
+            margin: 0;
+            padding: 0;
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffff;
+        }
+
+        .amount-balance span{
+            font-weight: bold;
+            color: #c8fa65;
+            font-size: 96px;
+        }
+
+        .expenses-container {
+            background-color: #6B6C5F;
+            padding: 20px;
+            border-radius: 10px;
+            flex-grow: 1;
+            /* height: 100%; */
+            /* width: 100%; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .expense-title, .income-title{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .income-title h2{
+            color: #1A1A1A;
+            margin: 0;
+        }
+
+        .income-amount{
+            color: #1A1A1A;
+            font-size: 2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .expense-title h2{
+            color: #ffff;
+            margin: 0;
+        }
+
+        .expense-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .income{
+            background-color: #D8FB78;
+        }
+
+        .expense-item, .income-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            margin: 10px 0;
+            color: #373737;
+            border-radius: 30px;
+            align-items: center;
+        }
+
+        .tag{
+            font-size: 16px;
+            background-color: #EBF38D;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .statistics canvas {
+            width: 100%;
+            max-height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .balance {
+                height: auto; /* Override height for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <h1>SpendID</h1>
+                <a href="#">Pemasukan</a>
+                <a href="#">Pengeluaran</a>
+                <a href="#">Learn Explorer</a>
+                <a href="#">Chatbot</a>
+            </nav>
+            <div class="nav-icon">
+                <a href="/profile.html"><img src="asset/user.svg" alt="user-icon"></a>
+            </div>
+        </header>
+        <div class="breadcrumb">
+            <a href="/dashboard.html"><img src="asset/chevron-left.svg" alt="back-icon"></a>
+            <h1>Your Balance</h1>
+        </div>  
+        <main>
+            <div class="left-section">
+                <div class="balance">
+                    <p class="amount-balance">IDR <span>685.000</span></p>
+                </div>
+                <div class="expenses-container">
+                    <div class="expense-title">
+                        <h2>Expenses</h2>
+                        <a href=""><img src="asset/plus.svg" alt="plus-icon"></a>
+                    </div>
+                    <p class="amount">IDR <span id="expenses-total">315.000</span></p>
+                    <div class="expense-list">
+                        <div class="expense-item">
+                            <span class="date">1 Sep</span>
+                            <span class="tag">Operation Cost</span>
+                            <span class="description">tagihan listrik</span>
+                            <span class="amount-expense">IDR 100.000</span>
+                        </div>
+                        <div class="expense-item">
+                            <span class="date">1 Sep</span>
+                            <span class="tag">Operation Cost</span>
+                            <span class="description">tagihan air</span>
+                            <span class="amount-expense">IDR 80.000</span>
+                        </div>
+                        <div class="expense-item">
+                            <span class="date">1 Sep</span>
+                            <span class="tag">Operation Cost</span>
+                            <span class="description">tagihan air</span>
+                            <span class="amount-expense">IDR 80.000</span>
+                        </div>
+                        <div class="expense-item">
+                            <span class="date">1 Sep</span>
+                            <span class="tag">Operation Cost</span>
+                            <span class="description">tagihan air</span>
+                            <span class="amount-expense">IDR 80.000</span>
+                        </div>
+                        <div class="expense-item">
+                            <span class="date">1 Sep</span>
+                            <span class="tag">Operation Cost</span>
+                            <span class="description">tagihan air</span>
+                            <span class="amount-expense">IDR 80.000</span>
+                        </div>
+                        <div class="expense-item">
+                            <span class="date">1 Sep</span>
+                            <span class="tag">Operation Cost</span>
+                            <span class="description">tagihan air</span>
+                            <span class="amount-expense">IDR 80.000</span>
+                        </div>
+                        <div class="view-more">view more</div>
+                        
+                        <!-- Add more expenses as needed -->
+                    </div>
+                </div>
+            </div>
+            <div class="right-section">
+                <section class="statistics">
+                    <h2>Statistics</h2>
+                    <canvas id="pie-chart"></canvas>
+                </section>
+                <section class="income">
+                    <div class="income-title">
+                        <h2>Income</h2>
+                        <a href=""><img src="asset/plusdark.svg" alt="plus-icon"></a>
+                    </div>
+                    <p class="income-amount">IDR <span>1.000.000</span></p>
+                    <div class="income-list">
+                        <div class="income-item">
+                            <span class="source">Tiktok</span>
+                            <span class="amount-income">IDR 100.000</span>
+                        </div>
+                        <div class="income-item">
+                            <span class="source">Affiliate</span>
+                            <span class="amount-income">IDR 100.000</span>
+                        </div>
+                        <div class="income-item">
+                            <span class="source">Youtube</span>
+                            <span class="amount-income">IDR 100.000</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const pieCtx = document.getElementById('pie-chart').getContext('2d');
+            const pieChart = new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Operation Cost', 'Income'],
+                    datasets: [{
+                        label: 'Statistics',
+                        data: [315000, 1000000],
+                        backgroundColor: [
+                            '#67d7e5',
+                            '#ff8c65'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                }
+            });
+        });
+    </script>
+</body>
+</html>

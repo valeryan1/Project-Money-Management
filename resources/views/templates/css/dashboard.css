@@ -1,0 +1,296 @@
+body {
+    background-color: #1c1c1c;
+    color: #d5f3e5;
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+header h1 {
+    color: #c8fa65;
+    margin: 0 3rem 0 0;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    color: #c8fa65;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.welcome-message {
+    margin: 20px 0;
+    margin-top: 0;
+    align-self: baseline;
+}
+
+.welcome-message p {
+    margin: 5px;
+}
+
+.username {
+    color: #c8fa65;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+section {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.balance .amount,
+.spending .amount,
+.income .amount {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.balance {
+    display: flex;
+    justify-content: space-between;
+    background-color: #6B6C5F;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.spending {
+    width: 100%;
+    background-color: #373737;
+    padding: 20px;
+    border-radius: 20px;
+    /* margin-top: 20px; */
+}
+
+.spending h2 {
+    margin-top: 0;
+}
+
+.spending-list, .reminder-list {
+    margin-top: 10px;
+}
+
+.spending-item, .reminder-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+    background-color: #ffff;
+    margin: 10px 0;
+    color: #373737;
+    border-radius: 20px;
+}
+
+.view-more {
+    text-align: center;
+    color: #c8fa65;
+    cursor: pointer;
+}
+
+.statistics {
+    background-color: #0C0C0C;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.statistics canvas {
+    width: 100%;
+    max-height: 300px;
+}
+
+.balance-highlight canvas{
+    max-height: 300px;
+    margin: 2rem;
+}
+
+.balance-highlight h2{
+    margin: 0;
+}
+
+.amount{
+    margin: 0;
+}
+
+.calculator {
+    background-color: #D8FB78;
+    padding: 20px;
+
+}
+
+.calculator h2 {
+    color: #373737;
+    margin-top: 0;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.calculator-button {
+    background-color: #ffff;
+    height: 50px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #9eff00;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Popup container - hidden by default */
+.popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup content */
+.popup {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    color: #fff;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #666;
+    background: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.add-btn {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    border: none;
+    background-color: #9eff00;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.form{
+    display: flex;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .popup {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 900px) {
+    main {
+    grid-template-columns: 1fr;
+    }
+    
+    css
+    Copy code
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .balance{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .statistics canvas {
+        max-height: 200px;
+    }
+    }
+
+@media (max-width: 480px) {
+    .popup {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .form-group input, .form-group select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .add-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .close-btn {
+        font-size: 18px;
+    }
+}

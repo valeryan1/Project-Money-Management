@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit UMKM</title>
+</head>
+<body>
+    <h1>Edit UMKM</h1>
+    <form action="/update" method="post">
+        <input type="hidden" id="id" name="id" value="{{.UmkmID}}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{.UmkmName}}" required>
+        <br>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" value="{{.UmkmAddress}}" required>
+        <br>
+        <label for="notelp">Phone:</label>
+        <input type="text" id="notelp" name="notelp" value="{{.UmkmNoTelp}}" required>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/">Back to list</a>
+</body>
+</html>

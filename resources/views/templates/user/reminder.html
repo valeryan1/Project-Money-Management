@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Reminder</title>
+</head>
+<body>
+    <h1>Create Reminder</h1>
+    <form action="/insert-reminder" method="post">
+        <input type="hidden" id="userid" name="userid" value="{{.UserID}}" required>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+        <br>
+        <label for="duedate">Due Date:</label>
+        <input type="date" id="duedate" name="duedate" required>
+        <br>
+        <input type="submit" value="Create">
+    </form>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminders</title>
+    <link rel="stylesheet" href="css/reminder.css">
+</head>
+
+<body>
+ <div class="container">
+    <div class="todo-app">
+        <h2>Reminders</h2>
+        <form action="/insert-reminder" method="post">
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add your reminder">
+                <input type="date" id="due-date" placeholder="Due date">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+            <!-- </ul>
+        </form>
+    </div>
+ </div>
+ <script src="script.js"></script>
+</body>
+</html> --> 

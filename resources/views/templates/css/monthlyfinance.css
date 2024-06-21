@@ -1,0 +1,107 @@
+body {
+    background-color: #1e1e1e;
+    color: #d5ff00;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav a {
+    color: #ffffff; 
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+.monthly-finances {
+    background-color: #141414;
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+.summary{
+    background-color: #3e3e3e;
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+.monthly-finances h2, .summary h2 {
+    margin: 0 0 20px 0;
+}
+
+.year {
+    text-align: right;
+    font-size: 24px;
+    color: #d5ff00;
+    margin-top: 10px;
+}
+
+.summary p {
+    margin: 0;
+    font-size: 18px;
+    color: #ffffff; 
+}
+
+.summary .income {
+    color: #d5ff00;
+}
+
+.summary .outcome {
+    color: rgb(188, 105, 63);
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+.monthly-finances {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #141414;
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.monthly-finances h2 {
+    flex: 1 100%;
+    margin: 0 20px 20px 0;
+}
+
+.year {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 24px;
+    color: #d5ff00;
+}
+
+#financeChart {
+    width: 100%;
+    height: 400px;
+}

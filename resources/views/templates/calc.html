@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Keuangan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #a00;
+        }
+        .section-header {
+            background-color: #a00;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            margin-top: 10px;
+        }
+        table td {
+            padding: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TUJUAN KEUANGAN</h1>
+        <div class="section-header">Masukkan tujuan finansial dan biaya saat ini.</div>
+        <table>
+            <tr>
+                <td>Tujuan Finansial:</td>
+                <td><input type="text" id="tujuan" value="0"></td>
+            </tr>
+            <tr>
+                <td>Biaya Saat ini (Rp):</td>
+                <td><input type="number" id="biayaSaatIni" value="0"></td>
+            </tr>
+            <tr>
+                <td>Tingkat Kenaikan Harga per tahun (Dalam Persen):</td>
+                <td><input type="number" id="kenaikanHarga" value="0"></td>
+            </tr>
+            <tr>
+                <td>Jangka Waktu Investasi (Dalam Tahun):</td>
+                <td><input type="number" id="jangkaWaktu" value="0"></td>
+            </tr>
+            <tr>
+                <td>Kebutuhan Dana .. Tahun Lagi (Rp):</td>
+                <td><input type="number" id="kebutuhanDana" value="0" readonly></td>
+            </tr>
+        </table>
+
+        <div class="section-header">Hasil perhitungan nilai investasi yang harus dilakukan</div>
+        <table>
+            <tr>
+                <td>Target Imbal Hasil Tabungan (% Per-Tahun):</td>
+                <td><input type="number" id="imbalHasil" value="10"></td>
+            </tr>
+            <tr>
+                <td>Menabung Setiap Bulan (Rp):</td>
+                <td><input type="number" id="tabunganBulanan" value="0" readonly></td>
+            </tr>
+            <tr>
+                <td>Menabung Sekaligus (Rp):</td>
+                <td><input type="number" id="tabunganSekaligus" value="0" readonly></td>
+            </tr>
+        </table>
+        <button onclick="calculate()">Hitung</button>
+    </div>
+
+    <script>
+        function calculate() {
+            const biayaSaatIni = parseFloat(document.getElementById('biayaSaatIni').value);
+            const kenaikanHarga = parseFloat(document.getElementById('kenaikanHarga').value) / 100;
+            const jangkaWaktu = parseFloat(document.getElementById('jangkaWaktu').value);
+            const imbalHasil = parseFloat(document.getElementById('imbalHasil').value) / 100;
+
+            // Calculate future cost
+            const futureCost = biayaSaatIni * Math.pow(1 + kenaikanHarga, jangkaWaktu);
+            document.getElementById('kebutuhanDana').value = futureCost.toFixed(2);
+
+            // Calculate monthly savings required
+            const monthlySavings = futureCost / ((Math.pow(1 + imbalHasil, jangkaWaktu) - 1) / (imbalHasil / 12));
+            document.getElementById('tabunganBulanan').value = monthlySavings.toFixed(2);
+
+            // Calculate lump sum savings required
+            const lumpSum = futureCost / Math.pow(1 + imbalHasil, jangkaWaktu);
+            document.getElementById('tabunganSekaligus').value = lumpSum.toFixed(2);
+        }
+    </script>
+</body>
+</html>

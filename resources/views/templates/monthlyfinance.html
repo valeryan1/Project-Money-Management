@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendID</title>
+    <link rel="stylesheet" href="css/montlyfinance.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #d5ff00;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-bottom: 1px solid #333;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: #ffffff; 
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .monthly-finances {
+            background-color: #141414;
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+        .summary{
+            background-color: #3e3e3e;
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+
+        .monthly-finances h2, .summary h2 {
+            margin: 0 0 20px 0;
+        }
+
+        .year {
+            text-align: right;
+            font-size: 24px;
+            color: #d5ff00;
+            margin-top: 10px;
+        }
+
+        .summary p {
+            margin: 0;
+            font-size: 18px;
+            color: #ffffff; 
+        }
+
+        .summary .income {
+            color: #d5ff00;
+        }
+
+        .summary .outcome {
+            color: rgb(188, 105, 63);
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 400px !important;
+        }
+        .monthly-finances {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #141414;
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 20px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .monthly-finances h2 {
+            flex: 1 100%;
+            margin: 0 20px 20px 0;
+        }
+
+        .year {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 24px;
+            color: #d5ff00;
+        }
+
+        #financeChart {
+            width: 100%;
+            height: 400px;
+        }
+
+    </style>    
+</head>
+<body>
+    <header>
+        <h1>SpendID</h1>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Calculator</a>
+            <!-- <a href="#">Learn Explorer</a> -->
+        </nav>
+    </header>
+    <main>
+        <div class="monthly-finances">
+            <h2>Monthly Finances</h2>
+            <canvas id="financeChart"></canvas>
+            <div class="year" id="currentYear">2024</div>
+        </div>
+        <div class="summary">
+            <h2>Summary</h2>
+            <p>Congrats! You've earned <span class="income">+IDR000.00</span> and spent <span class="outcome">-IDR000.00</span></p>
+        </div>
+    </main>
+    <script>
+        // Set current year dynamically
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+
+        // Chart configuration
+        const ctx = document.getElementById('financeChart').getContext('2d');
+        const financeChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label: 'Income',
+                        data: [500, 400, 450, 600, 500, 550, 500, 550, 600, 500, 550, 500],
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                        borderColor: 'rgba(255, 255, 255, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Outcome',
+                        data: [300, 200, 250, 400, 300, 350, 300, 350, 400, 300, 350, 300],
+                        backgroundColor: 'rgba(213, 255, 0, 0.8)',
+                        borderColor: 'rgba(213, 255, 0, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            color: '#d5ff00'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

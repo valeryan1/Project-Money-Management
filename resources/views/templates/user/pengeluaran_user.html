@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expenses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            background-color: #2c2c2c;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            
+            padding: 20px;
+            border: none;
+            border-bottom: 1px;
+            width: 90%;
+            max-width: 900px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Add this line */
+            width: 100%; /* Ensure header takes full width */
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: left;
+        }
+
+        .expense-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .category-select {
+            width: 200px; /* Set specific width for category-select */
+            padding: 10px;
+            margin-top: 5px;
+            border: none; /* Remove border */
+            border-radius: 20px;
+            background-color: #ffffff9e;
+            color:#2c2c2c;
+            outline: none; /* Remove outline */
+        }
+
+        input[type="date"],
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px; 
+        
+            background-color: #333;
+            color: #ffffff;
+            outline: none;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+
+        .add-button {
+            background-color: #d7fc49;
+            color: #000;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            width: auto;
+            margin-top: 20px;
+        }
+
+        .add-button:hover {
+            background-color: #c3e743;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-button">&#8592;</button>
+            <h1>Add Expenses</h1>
+        </div>
+        <form action="/insert-pengeluaran" method="post">
+            <input type="hidden" id="userid" name="userid" value="{{.UserID}}" required>
+            <label for="umkmid">UMKM:</label>
+            <select id="umkmid" name="umkmid" required>
+                {{range .UMKMs}}
+                <option value="{{.UmkmID}}">{{.UmkmName}}</option>
+                {{end}}
+            </select>
+            <div class="form-group">
+                <select id="kategori" name="kategori" class="category-select" required>
+                    <option value="" disabled selected>Choose Category</option>
+                    {{range .KategoriPengeluarans}}
+                    <option value="{{.KategoriPengeluaranID}}">{{.Kategori}}</option>
+                    {{end}}
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="date" id="date" name="date" placeholder="DD/MM/YYYY" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Details">
+            </div>
+            <div class="form-group">
+                <input type="text" id="nominal" name="nominal" placeholder="Amount" required>
+                <input type="number" placeholder="Amount">
+            </div>
+            <button type="submit" class="add-button"><input type="submit" value="Create"></button>
+        </form>
+    </div>
+</body>
+</html>

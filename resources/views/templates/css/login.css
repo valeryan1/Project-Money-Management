@@ -1,0 +1,156 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1A1A1A;
+}
+.top {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -120%); 
+    font-size: 70px;
+    text-align: center;
+    color: #D8FB78;
+    font-weight: bold;
+    margin-bottom: 10rem;
+    z-index: 1;
+
+
+}
+
+.top h1{
+    font-size: 200px;
+    margin-top: 20rem;
+    margin-bottom: auto;
+}
+  
+.container {
+    background-color: #6B6C5F;
+    padding: 30px;
+    border-radius:40px;
+    text-align: center;
+    width: 800px; 
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 12.5rem;  */
+    /* margin-right: 12rem;  */
+
+}
+
+.container p{
+    margin-top: 1.5rem;
+    color: #fff;
+}
+
+.bottom {
+    font-size: 24px;
+    /* margin-top: 40rem; */
+    text-align: center;
+    justify-content: center;
+    margin-right: 10rem;
+}
+
+.form-group1 {
+    margin-top: 50px;
+    width: 493px;
+    height: 69px;
+    position: center;
+    border-radius: 40px;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-group2 {
+    margin-top: 50px;
+    width: 493px;
+    height: 69px;
+    position: center;
+    border-radius:40px;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 0px; /* Adjust margin as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    color: #333; /* Set label text color */
+}
+
+.form-group1 input[type="text"],
+.form-group1 input[type="password"] {
+  width: 493px; 
+  height: 30px;/* Maintain full width within the form-group */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 60px; /* Set border radius to 60px */
+  text-align: center;
+}
+
+.form-group2 input[type="text"],
+.form-group2 input[type="password"] {
+    width: 493px; 
+    height: 30px; /* Maintain full width within the form-group */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 60px; /* Set border radius to 60px */
+  text-align: center;
+}
+
+
+button {
+    background-color: #D8FB78;
+    color: #000000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 52px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    width: 137px;
+    font-family: sans-serif;
+}
+
+button:hover {
+    background-color: #0067cc;
+}
+
+a {
+    color: #D8FB78;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container p{
+    font-size: 13px;;
+}
+
+.bottom h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 1200%); /* Center horizontally and vertically */
+    font-size: 20px;
+    text-align: center;
+    color: #D8FB78;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    z-index: 1;
+    text-align: center;
+}

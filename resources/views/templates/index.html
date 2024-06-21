@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UMKM List</title>
+</head>
+<body>
+    <h1>UMKM List</h1>
+    <a href="/create">Create New UMKM</a>
+    <a href="/pemasukan"> Pemasukan</a>
+    <a href="/pengeluaran"> Pengeluaran</a>
+    <a href="/monthly"></a>
+    <a href="/calc">Calculator UMKM</a>
+    <a href="/chat">Chat With Our Bot</a>
+    <a href="/logout">Logout</a>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+        {{range .}}
+        <tr>
+            <td>{{.UmkmID}}</td>
+            <td>{{.UmkmName}}</td>
+            <td>{{.UmkmAddress}}</td>
+            <td>{{.UmkmNoTelp}}</td>
+            <td>
+                <a href="/edit?id={{.UmkmID}}">Edit</a>
+                <a href="/delete?id={{.UmkmID}}">Delete</a>
+            </td>
+        </tr>
+        {{end}}
+    </table>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form action="/signup" method="POST">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" name="phone" required><br>
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br>
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/signup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+        font-family: Inter, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 130vh;
+        background-color: #1A1A1A;
+    }
+    .top {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -120%); /* Center horizontally and vertically */
+        font-size: 70px;
+        text-align: center;
+        color: #D8FB78;
+        font-weight: bold;
+        margin-bottom: 10rem;
+        z-index: 1;
+        
+
+    }
+
+    .top h1{
+        font-size: 200px;
+        margin-top:20rem;
+        margin-bottom: auto;
+    }
+    
+    .container {
+        background-color: #6B6C5F;
+        padding: 30px;
+        border-radius:40px;
+        text-align: center;
+        width: 960px; 
+        height: 670px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10rem; 
+        margin-top: 5.5rem;
+        
+        /* align-items: center; */
+    }
+
+    .container p{
+        margin-top: 1.5rem;
+        color: #fff;
+    }
+
+    .bottom {
+        font-size: 24px;
+        /* margin-top: 40rem; */
+        text-align: center;
+        justify-content: center;
+        margin-right: 10rem;
+    }
+
+    .form-group1 {
+        margin-top: 50px;
+        width: 493px;
+        height: 69px;
+        position: center;
+        border-radius: 40px;
+        margin-left: 14.5rem;
+        margin-right: 10rem;
+        margin-top: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-group2 {
+        margin-top: 50px;
+        width: 493px;
+        height: 69px;
+        position: center;
+        border-radius:40px;
+        margin-left: 14.5rem;
+        margin-right: 10rem;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .form-group3 {
+        margin-top: 50px;
+        width: 493px;
+        height: 69px;
+        position: center;
+        border-radius:40px;
+        margin-left: 14.5rem;
+        margin-right: 10rem;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .form-group4 {
+        margin-top: 50px;
+        width: 493px;
+        height: 69px;
+        position: center;
+        border-radius:40px;
+        margin-left: 14.5rem;
+        margin-right: 10rem;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .form-group5 {
+        margin-top: 50px;
+        width: 493px;
+        height: 69px;
+        position: center;
+        border-radius:40px;
+        margin-left: 14.5rem;
+        margin-right: 10rem;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .form-group6 {
+        margin-top: 50px;
+        width: 493px;
+        height: 69px;
+        position: center;
+        border-radius:40px;
+        margin-left: 14.5rem;
+        margin-right: 10rem;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .form-group7 {
+        margin-top: 50px;
+        width: 493px;
+        height: 69px;
+        position: center;
+        border-radius:40px;
+        margin-left: 14.5rem;
+        margin-right: 10rem;
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0px; /* Adjust margin as needed */
+        font-size: 16px; /* Adjust font size as needed */
+        color: #333; /* Set label text color */
+    }
+
+    .form-group1 input[type="text"],
+    .form-group1 input[type="text"],
+    .form-group1 input[type="password"],
+    .form-group1 input[type="text"],
+    .form-group1 input[type="email"],
+    .form-group1 input[type="text"],
+    .form-group1 input[type="date"] {
+    width: 493px; 
+    height: 30px;/* Maintain full width within the form-group */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 60px; /* Set border radius to 60px */
+    text-align: center;
+    }
+
+    .form-group2 input[type="text"],
+    .form-group2 input[type="text"],
+    .form-group2 input[type="password"],
+    .form-group2 input[type="text"],
+    .form-group2 input[type="email"],
+    .form-group2 input[type="text"],
+    .form-group2 input[type="date"] {
+        width: 493px; 
+        height: 30px; /* Maintain full width within the form-group */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 60px; /* Set border radius to 60px */
+    text-align: center;
+    }
+
+    .form-group3 input[type="text"],
+    .form-group3 input[type="text"],
+    .form-group3 input[type="password"],
+    .form-group3 input[type="text"],
+    .form-group3 input[type="email"],
+    .form-group3 input[type="text"],
+    .form-group3 input[type="date"] {
+        width: 493px; 
+        height: 30px; /* Maintain full width within the form-group */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 60px; /* Set border radius to 60px */
+    text-align: center;
+    }
+
+    .form-group4 input[type="text"],
+    .form-group4 input[type="text"],
+    .form-group4 input[type="password"],
+    .form-group4 input[type="text"],
+    .form-group4 input[type="email"],
+    .form-group4 input[type="text"],
+    .form-group4 input[type="date"] {
+        width: 493px; 
+        height: 30px; /* Maintain full width within the form-group */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 60px; /* Set border radius to 60px */
+    text-align: center;
+    }
+
+    .form-group5 input[type="text"],
+    .form-group5 input[type="text"],
+    .form-group5 input[type="password"],
+    .form-group5 input[type="text"],
+    .form-group5 input[type="email"],
+    .form-group5 input[type="text"],
+    .form-group5 input[type="date"] {
+        width: 493px; 
+        height: 30px; /* Maintain full width within the form-group */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 60px; /* Set border radius to 60px */
+    text-align: center;
+    }
+
+    .form-group6 input[type="text"],
+    .form-group6 input[type="text"],
+    .form-group6 input[type="password"],
+    .form-group6 input[type="text"],
+    .form-group6 input[type="email"],
+    .form-group6 input[type="text"],
+    .form-group6 input[type="date"] {
+        width: 493px; 
+        height: 30px; /* Maintain full width within the form-group */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 60px; /* Set border radius to 60px */
+    text-align: center;
+    }
+
+    .form-group7 input[type="text"],
+    .form-group7 input[type="text"],
+    .form-group7 input[type="password"],
+    .form-group7 input[type="text"],
+    .form-group7 input[type="email"],
+    .form-group7 input[type="text"],
+    .form-group7 input[type="date"] {
+        width: 493px; 
+        height: 30px; /* Maintain full width within the form-group */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 60px; /* Set border radius to 60px */
+    text-align: center;
+    }
+
+    button {
+        background-color: #D8FB78;
+        color: #000000;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 52px;
+        cursor: pointer;
+        margin-top: 1rem;
+        width: 137px;
+        font-family: sans-serif;
+        /* margin-left: 5rem ; */
+
+    }
+
+    button:hover {
+        background-color: #0067cc;
+    }
+
+    a {
+        color: #D8FB78;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .container p{
+        font-size: 13px;
+        margin-top: 1rem;
+    }
+
+    .bottom h2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 1200%); /* Center horizontally and vertically */
+        font-size: 20px;
+        text-align: center;
+        color: #D8FB78;
+        font-weight: bold;
+        margin-top:16.5rem;
+        margin-bottom: 100rem;
+        z-index: 1;
+        text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="top">
+        <h1>Sign Up</h1>
+    </div>
+    <div class="container">
+        <form action="/signup" method="POST">
+            <div class="form-group1">
+                <label for="name"></label><br>
+                <input type="text" id="name" name="name" placeholder="name" required><br>
+            </div>
+            
+            <div class="form-group2">
+                <label for="username"></label><br>
+                <input type="text" id="username" name="username" placeholder="username" required><br>
+            </div>
+
+            <div class="form-group3">
+                <label for="password"></label><br>
+                <input type="password" id="password" name="password" placeholder="password" required><br>
+            </div>
+
+            <div class="form-group4">
+                <label for="address"></label><br>
+                <input type="text" id="address" name="address" placeholder="address" required><br>
+            </div>
+
+            <div class="form-group5">
+                <label for="email"></label><br>
+                <input type="email" id="email" name="email" placeholder="email"required><br>
+            </div>
+
+            <div class="form-group6">
+                <label for="phone"></label><br>
+                <input type="text" id="phone" name="phone" placeholder="phone"required><br>
+            </div>
+
+            <div class="form-group7">
+                <label for="dob"></label><br>
+                <input type="date" id="dob" name="dob" placeholder="dob"required><br>
+            </div>
+
+            <button type="submit" value="Sign Up"> Sign Up</button> 
+
+        </form>
+
+    </div>
+
+    <div class="bottom">
+        <h2>SpendID</h2>
+    </div>
+</body>
+</html>

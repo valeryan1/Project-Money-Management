@@ -4,8 +4,8 @@ import (
 	"github.com/goravel/framework/contracts/foundation"
 	"github.com/goravel/framework/facades"
 
-	"goravel/app/http"
-	"goravel/routes"
+	"spendid/app/http"
+	"spendid/routes"
 )
 
 type RouteServiceProvider struct {
@@ -21,7 +21,7 @@ func (receiver *RouteServiceProvider) Boot(app foundation.Application) {
 	receiver.configureRateLimiting()
 
 	routes.Web()
-	routes.Api()
+	// routes.Api()
 }
 
 func (receiver *RouteServiceProvider) configureRateLimiting() {

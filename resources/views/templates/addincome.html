@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Income</title>
+    <link rel="stylesheet" href="styles/addincome.css">
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            background-color: #2c2c2c;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            
+            padding: 20px;
+            border: none;
+            border-bottom: 1px;
+            width: 90%;
+            max-width: 900px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Add this line */
+            width: 100%; /* Ensure header takes full width */
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: left;
+        }
+
+        .income-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+
+        input[type="date"],
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px; 
+        
+            background-color: #333;
+            color: #ffffff;
+            outline: none;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+
+        .add-button {
+            background-color: #d7fc49;
+            color: #000;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            width: auto;
+            margin-top: 20px;
+        }
+
+        .add-button:hover {
+            background-color: #c3e743;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-button">&#8592;</button>
+            <h1>Add Income</h1>
+        </div>
+        <form class="income-form">    
+            <div class="form-group">
+                <input type="date" placeholder="DD/MM/YYYY">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Details">
+            </div>
+            <div class="form-group">
+                <input type="number" placeholder="Amount">
+            </div>
+            <button type="submit" class="add-button">+ Add</button>
+        </form>
+    </div>
+</body>
+</html>

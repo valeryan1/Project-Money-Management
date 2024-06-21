@@ -1,0 +1,215 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1A1A1A;
+        }
+        .top {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -120%); 
+            font-size: 70px;
+            text-align: center;
+            color: #D8FB78;
+            font-weight: bold;
+            margin-bottom: 10rem;
+            z-index: 1;
+
+
+        }
+
+        .top h1{
+            font-size: 200px;
+            margin-top: 20rem;
+            margin-bottom: auto;
+        }
+        
+        .container {
+            background-color: #6B6C5F;
+            padding: 30px;
+            border-radius:40px;
+            text-align: center;
+            width: 800px; 
+            height: 350px;
+            justify-content: center;
+            align-items: center;
+            /* margin-left: 12.5rem;  */
+            /* margin-right: 12rem;  */
+
+        }
+
+        .container p{
+            margin-top: 1.5rem;
+            color: #fff;
+        }
+
+        .bottom {
+            font-size: 24px;
+            /* margin-top: 40rem; */
+            text-align: center;
+            justify-content: center;
+            margin-right: 10rem;
+        }
+
+        .form-group1 {
+            margin-top: 50px;
+            width: 493px;
+            height: 69px;
+            position: center;
+            border-radius: 40px;
+            margin-left: 10rem;
+            margin-right: 10rem;
+            margin-top: 6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-group2 {
+            margin-top: 50px;
+            width: 493px;
+            height: 69px;
+            position: center;
+            border-radius:40px;
+            margin-left: 10rem;
+            margin-right: 10rem;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0px; /* Adjust margin as needed */
+            font-size: 16px; /* Adjust font size as needed */
+            color: #333; /* Set label text color */
+        }
+
+        .form-group1 input[type="text"],
+        .form-group1 input[type="password"] {
+        width: 493px; 
+        height: 30px;/* Maintain full width within the form-group */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 60px; /* Set border radius to 60px */
+        text-align: center;
+        }
+
+        .form-group2 input[type="text"],
+        .form-group2 input[type="password"] {
+            width: 493px; 
+            height: 30px; /* Maintain full width within the form-group */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 60px; /* Set border radius to 60px */
+        text-align: center;
+        }
+
+
+        button {
+            background-color: #D8FB78;
+            color: #000000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 52px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            width: 137px;
+            font-family: sans-serif;
+        }
+
+        button:hover {
+            background-color: #0067cc;
+        }
+
+        a {
+            color: #D8FB78;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container p{
+            font-size: 13px;;
+        }
+
+        .bottom h2{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 1200%); /* Center horizontally and vertically */
+            font-size: 20px;
+            text-align: center;
+            color: #D8FB78;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            z-index: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <h1>Log In</h1>
+    </div>
+
+    <div class="container">
+     <form action="/login" method="post">
+        <div class="form-group1">
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group2">
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+
+    <div class="bottom">
+        <h2>SpendID</h2>
+    </div>
+</body>
+</html>
